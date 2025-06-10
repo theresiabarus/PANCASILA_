@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Form Aspirasi Mahasiswa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #fdfaf6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 60px auto;
+      background: #ffffff;
+      padding: 2rem 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #b33a17;
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #333;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      background-color: #fefefe;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      background-color: #b33a17;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #972b10;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Form Aspirasi Mahasiswa</h2>
+    <form action="proses_aspirasi.php" method="POST">
+      <label for="nama">Nama Lengkap</label>
+      <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+
+      <label for="kampus">Asal Kampus</label>
+      <input type="text" id="kampus" name="kampus" placeholder="Contoh: Politeknik Negeri Medan" required>
+
+      <label for="topik">Topik Aspirasi</label>
+      <select id="topik" name="topik" required>
+        <option value="" disabled selected>Pilih topik</option>
+        <option value="Pancasila dan Mahasiswa">Pancasila dan Mahasiswa</option>
+        <option value="Penerapan Nilai Pancasila">Penerapan Nilai Pancasila</option>
+        <option value="Wawasan Kebangsaan">Wawasan Kebangsaan</option>
+        <option value="Toleransi dan Keberagaman">Toleransi dan Keberagaman</option>
+        <option value="Lainnya">Lainnya</option>
+      </select>
+
+      <label for="aspirasi">Isi Aspirasi</label>
+      <textarea id="aspirasi" name="aspirasi" rows="6" placeholder="Tulis aspirasimu di sini..." required></textarea>
+
+      <button type="submit">Kirim Aspirasi</button>
+    </form>
+  </div>
+
+</body>
+</html>
